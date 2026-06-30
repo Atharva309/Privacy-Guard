@@ -1,0 +1,9 @@
+streamlit>=1.35.0
+openai>=1.30.0
+pymupdf>=1.24.0
+opencv-python>=4.9.0
+numpy<2
+pyobjc-framework-Vision>=10.3; sys_platform == 'darwin'
+pyobjc-framework-Quartz>=10.3; sys_platform == 'darwin'
+python-dotenv>=1.0.0
+Pillow>=10.0.0

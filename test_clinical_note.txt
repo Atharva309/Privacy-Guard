@@ -1,0 +1,24 @@
+PATIENT DISCHARGE SUMMARY
+========================
+Patient Name: John Michael Smith
+Date of Birth: 03/15/1978
+SSN: 523-67-4891
+Medical Record Number: MRN-2024-88421
+Address: 1847 Oak Street, Portland, OR 97201
+Phone: (503) 847-2291
+Email: john.smith@gmail.com
+
+Attending Physician: Dr. Sarah Chen
+Date of Admission: 2024-11-12
+Date of Discharge: 2024-11-15
+
+Primary Diagnosis: Type 2 Diabetes Mellitus (ICD-10: E11.9)
+Secondary Diagnosis: Hypertension (ICD-10: I10)
+
+Medications Prescribed:
+- Metformin 500mg twice daily
+- Lisinopril 10mg once daily
+
+Follow-up: Schedule with primary care within 2 weeks.
+Contact billing at billing@oregonhealth.com or 1-800-555-0123.
+========================
