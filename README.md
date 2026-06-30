@@ -15,6 +15,8 @@ insurance claims, and more.
 
 Upload a PDF → AI identifies patient PHI → Precise redaction → Download clean document.
 
+![Privacy Guard Main UI](assets/ui_overview.png)
+
 ---
 
 ## The Problem
@@ -214,6 +216,9 @@ Subsequent runs are faster. A 3-page PDF typically takes 10-15 seconds.
 ---
 
 ## Example Results
+
+**Side-by-Side Redaction Comparison**
+![Side-by-Side Redaction Comparison](assets/redaction_comparison.png)
 
 **Discharge Summary** — correctly redacted:
 - ✅ Patient name, SSN, DOB, home address, phones, email
