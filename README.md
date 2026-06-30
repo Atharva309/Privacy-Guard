@@ -115,39 +115,93 @@ Download Redacted PDF
 
 ---
 
-## Setup
+## ⚠️ Platform Requirements
 
-### Prerequisites
-- macOS with Apple Silicon (M-Series recommended)
-- Python 3.11+
-- OpenAI API key ([get one here](https://platform.openai.com/api-keys))
+**This application runs on macOS with Apple Silicon only.**
 
-### Installation
+The OCR engine uses Apple's native Vision framework (`pyobjc-framework-Vision`),
+which is built into macOS and uses the M4 Neural Engine for fast, accurate text
+extraction. It does not run on Windows or Linux.
+
+Tested on: macOS Sonoma 14+ with Apple M4
+
+---
+
+## Setup & Installation
+
+### Step 1 — Clone the repository
 
 ```bash
-# Clone the repo
 git clone https://github.com/Atharva309/Privacy-Guard
 cd Privacy-Guard
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env and add your OpenAI API key
 ```
 
-### Run
+### Step 2 — Create a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Step 3 — Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4 — Get an OpenAI API key
+
+This app uses OpenAI's `gpt-4o-mini` model to identify PHI in documents.
+You need an API key to use it.
+
+1. Go to [platform.openai.com](https://platform.openai.com)
+2. Sign in or create an account
+3. Navigate to **API Keys** → **Create new secret key**
+4. Copy the key — it starts with `sk-`
+
+> Cost: processing one 3-page clinical document costs approximately $0.001
+> (less than a tenth of a cent) using gpt-4o-mini.
+
+### Step 5 — Add your API key
+
+Create a `.env` file in the project root:
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` in any text editor and replace the placeholder with your key:
+
+```
+OPENAI_API_KEY=sk-your-actual-key-here
+```
+
+Save the file. **Never commit this file to git** — it is already in `.gitignore`.
+
+### Step 6 — Run the app
 
 ```bash
 streamlit run app.py
 ```
 
-Open http://localhost:8501 in your browser.
+The app will open automatically at **http://localhost:8501** in your browser.
+
+---
+
+## Troubleshooting
+
+**`ModuleNotFoundError: No module named 'Vision'`**
+→ You are not on macOS Apple Silicon. This app requires macOS with Apple M-series chip.
+
+**`AuthenticationError: OpenAI API key invalid`**
+→ Check your `.env` file. Make sure the key starts with `sk-` and has no extra spaces.
+
+**`Error: Could not read document`**
+→ Make sure the uploaded file is a valid PDF, PNG, or JPG under 50MB.
+
+**App loads but redaction takes a long time**
+→ Normal for first run — Apple Vision warms up on first inference.
+Subsequent runs are faster. A 3-page PDF typically takes 10-15 seconds.
 
 ---
 
