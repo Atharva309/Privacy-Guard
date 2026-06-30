@@ -15,8 +15,6 @@ insurance claims, and more.
 
 Upload a PDF → AI identifies patient PHI → Precise redaction → Download clean document.
 
-![Demo](assets/demo.png)
-
 ---
 
 ## The Problem
